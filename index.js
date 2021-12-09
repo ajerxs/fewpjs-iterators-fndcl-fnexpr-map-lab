@@ -1,4 +1,4 @@
-const tutorials = [
+let tutorials = [
   'what does the this keyword mean?',
   'What is the Constructor OO pattern?',
   'implementing Blockchain Web API',
@@ -12,6 +12,13 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  // use the .map method on the tutorials to return a new array
-  return tutorials
+  let titles = tutorials.map( function(title) {
+    let words = title.split(' ');
+    let thing = words.map( word => { 
+      let newWord = word[0].toUpperCase()  + word.substr(1)
+      return newWord
+    });
+    return thing.join(" ");
+  })
+  return titles
 }
